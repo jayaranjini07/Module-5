@@ -32,14 +32,41 @@ To write a Python program to get the name, attendance, and ID of a student and c
 ### PROGRAM
 
 ```
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+
+    def get_student_info(self):
+        return self.name, self.student_id
+
+class Attendance(Student):
+    def __init__(self, name, student_id, attendance):
+        super().__init__(name, student_id)
+        self.attendance = attendance
+
+    def check_eligibility(self):
+        if self.attendance > 80:
+            return "Eligible for Module Exam"
+        else:
+            return "Not Eligible for Module Exam"
+
+name = input()
+student_id = int(input())
+attendance = int(input())
+
+student = Attendance(name, student_id, attendance)
+print(student.name)
+print(student.student_id)
+print(student.check_eligibility())
 
 ```
 
 ### OUTPUT
 
+![image](https://github.com/user-attachments/assets/7427d260-2065-4d6f-bde6-652411b29f98)
 
 ### RESULT
-
-
+Thus the Python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance. If attendance > 80, the student is eligible; otherwise, not eligible was implemented and executed successfully.
 
 
